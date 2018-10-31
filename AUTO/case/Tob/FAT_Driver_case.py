@@ -80,56 +80,32 @@ class Driver_login(unittest.TestCase):
 
 
         #创建订单请求参数
-        self.createorder_data ={
-            "UseType":3,
-            "PatternType":1,
-            "UID":config.u_id,
-            "IsOpenIM":1,
-            "ChannelID":5,
-            "ChannelName":"H5预订",
-            "TotalPrice":238,
-            "SalesPrice":238,
-            "PriceMark":gg_class.pricemark,
-            # "PriceMark":'1032272372453087402',
-            "CtripPurchaseOrderID":config.CtripPurchaseOrderID,
-            "VehicleType":1016,
-            "Passenger":{
-                "AreaCode":86,
-                "Mobile":config.u_phone,
-                "Name":"豆壳儿",
-                "FirstName":"GGG",
-                "LastName":"TG",
-                "HotelTelCode":"66",
-                "HotelTel":"888888",
-                "EmergencyTelCode":"",
-                "EmergencyTel":"",
-                "WeiXinNo":""
-            },
-            "FixedCode":"BKK",
-            "FlightNumber":"EK4447",
-            "DuseLocation":{
-                "Longitude":100.750112,
-                "Latitude":13.689999,
-                "Address":"素万那普国际机场",
-                "DetailAddress":"素万那普国际机场"
-            },
-            "AuseLocation":{
-                "Longitude":100.509906,
-                "Latitude":13.740443,
-                "Address":"曼谷京华酒店",
-                "DetailAddress":"409-421/4 Yaowarat Rd, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100泰国"
-            },
-            "UseTime":YMDHMS(minutes='+2'),
-            "TakeOffTime":YMDHMS(minutes='+2'),
-            "DiscountAmount":0,
-            "SelectAddServices":[
+        self.createorder_data = dict(UseType=3, PatternType=1, UID=config.u_id, IsOpenIM=1, ChannelID=5,
+                                     ChannelName="H5预订", TotalPrice=238, SalesPrice=238, PriceMark=gg_class.pricemark,
+                                     CtripPurchaseOrderID=config.CtripPurchaseOrderID, VehicleType=1016, Passenger={
+                "AreaCode": 86,
+                "Mobile": config.u_phone,
+                "Name": "豆壳儿",
+                "FirstName": "GGG",
+                "LastName": "TG",
+                "HotelTelCode": "66",
+                "HotelTel": "888888",
+                "EmergencyTelCode": "",
+                "EmergencyTel": "",
+                "WeiXinNo": ""
+            }, FixedCode="BKK", FlightNumber="EK4447", DuseLocation={
+                "Longitude": 100.750112,
+                "Latitude": 13.689999,
+                "Address": "素万那普国际机场",
+                "DetailAddress": "素万那普国际机场"
+            }, AuseLocation={
+                "Longitude": 100.509906,
+                "Latitude": 13.740443,
+                "Address": "曼谷京华酒店",
+                "DetailAddress": "409-421/4 Yaowarat Rd, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100泰国"
+            }, UseTime=YMDHMS(minutes='+2'), TakeOffTime=YMDHMS(minutes='+2'), DiscountAmount=0, SelectAddServices=[
 
-            ],
-            "Adults":"2",
-            "IsVip":0,
-            "NeedLandingVisa":0,
-            "Luggage":"2"
-        }
+            ], Adults="2", IsVip=0, NeedLandingVisa=0, Luggage="2")
 
         self.queryorder_data = {
             "optchannel":0,
